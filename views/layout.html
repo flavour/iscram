@@ -86,6 +86,8 @@
 {{else:}}
 </head>
 <body>
+  <div id='container'>
+    <div id='banner'></div>
     <div id='menu_modules'>
         {{=current.menu.main}}
     </div>
@@ -97,8 +99,16 @@
             </div>
         </div>
         {{pass}}
-        <div {{if current.menu.options is not None:}}class='rightside'{{pass}}>
-            <div class='col1'>
+        <div {{if current.menu.options is None:}}>
+            <div class='col1left'>
+<div id='gcalendar-box'>
+<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=readyiscram%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FChicago" style=" border-width:0 " width="240" height="300" frameborder="0" scrolling="no"></iframe>
+</div>
+<div class='advert' align='center'>
+<a href='http://www.iscram.org' target='_blank'><img src='/{{=request.application}}/static/img/iscram/iscram.jpg' height=56 width=200></a>
+</div>
+            </div>
+            <div class='col2mid'>{{else:}} class='rightside'> <div class='col1'>{{pass}}
                 {{if response.error:}}<div class='error'>{{=response.error}}</div>{{pass}}
                 {{if response.warning:}}<div class='warning'>{{=response.warning}}</div>{{pass}}
                 {{if response.information:}}<div class='information'>{{=response.information}}</div>{{pass}}
@@ -108,6 +118,45 @@
                     {{include}}
                 </div>
             </div>
+            {{if current.menu.options is None:}}
+            <div class='col3right'>
+<div class='advert' align='center'>
+	<a href='https://www.facebook.com/pages/ReadyISCRAM/255935291168887' target='_blank' title='{{=T("ReadyISCRAM on Facebook")}}'><img src='/{{=request.application}}/static/img/social/facebook.png' width='32' height='32' style='vertical-align: middle;' alt='{{=T("MyCedarBluff AL on Facebook")}}' /></a>
+	<a href='http://www.linkedin.com/pub/mycedarbluff-al/4b/1a9/372' target='_blank' title='{{=T("ReadyISCRAM on LinkedIn")}}'><img src='/{{=request.application}}/static/img/social/LinkedIn.png' width='32' height='32' style='vertical-align: middle;' alt='{{=T("MyCedarBluff AL on LinkedIn")}}' /></a>
+	<a href='http://twitter.com/#!/ReadyISCRAM' target='_blank' title='{{=T("@ReadyISCRAM on Twitter")}}'><img src='/{{=request.application}}/static/img/social/twitter.png' width='32' height='32' style='vertical-align: middle;' alt='{{=T("@MyCedarBluffAL on Twitter")}}' /></a>
+	<a href='http://www.youtube.com/channel/UCVRRzBTdrNKztXTqOTOYQFA' target='_blank' title='{{=T("ReadyISCRAM on YouTube")}}'><img src='/{{=request.application}}/static/img/social/YouTube.png' width='32' height='32' style='vertical-align: middle;' alt='{{=T("MyCedarBluff AL on YouTube")}}' /></a>
+</div>
+<div id='twitter-box'>
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 5,
+  interval: 1,
+  width: 'auto',
+  height: 360,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#4aed05'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    behavior: 'default'
+  }
+}).render().setUser('ReadyISCRAM').start();
+</script>
+</div>
+            </div>{{else:}}{{pass}}
         </div>
     </div>
     <div id='footer'>
@@ -116,6 +165,7 @@
         {{=response.s3.toolbar()}}
       {{pass}}
     </div>
+  </div>
 {{pass}}
 {{if response.google_analytics_id:}}<script>/* http://mathiasbynens.be/notes/async-analytics-snippet */ var _gaq=[['_setAccount','{{=response.google_analytics_id}}'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script')) </script>{{pass}}
 <!-- Include dynamically added Scripts -->

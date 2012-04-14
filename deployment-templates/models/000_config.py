@@ -16,6 +16,7 @@ FINISHED_EDITING_CONFIG_FILE = False # change to True after you finish editing t
 
 # Database settings
 deployment_settings.database.db_type = "sqlite"
+#deployment_settings.database.db_type = "postgres"
 deployment_settings.database.host = "localhost"
 deployment_settings.database.port = None # use default
 deployment_settings.database.database = "sahana"
@@ -77,6 +78,7 @@ deployment_settings.base.system_name_short = T("Sahana Eden")
 
 # Set this to the Public URL of the instance
 deployment_settings.base.public_url = "http://127.0.0.1:8000"
+#deployment_settings.base.public_url = "http://readyiscram.org"
 
 # Switch to "False" in Production for a Performance gain
 # (need to set to "True" again when Table definitions are changed)
@@ -103,7 +105,7 @@ deployment_settings.base.migrate = True
 # 20+ Demo (Data required for a default demo)
 #     Each subsequent Demos can take any unique number >= 20
 #     The actual demo will be defined by the file demo_folders.cfg
-deployment_settings.base.prepopulate = 1
+deployment_settings.base.prepopulate = ['demo/IFRC_Train', 'demo/IFRC_Demo']
 
 
 # Set this to True to use Content Delivery Networks to speed up Internet-facing sites
@@ -125,28 +127,28 @@ deployment_settings.mail.server = "127.0.0.1:25"
 #deployment_settings.mail.tls = True
 #deployment_settings.mail.login = "username:password"
 # From Address
-deployment_settings.mail.sender = "'Sahana' <sahana@your.org>"
+deployment_settings.mail.sender = "'Sahana' <sahana@readyiscram.org>"
 # Default email address to which requests to approve new user accounts gets sent
 # This can be overridden for specific domains/organisations via the auth_domain table
-deployment_settings.mail.approver = "useradmin@your.org"
+deployment_settings.mail.approver = "useradmin@readyiscram.org"
 # Daily Limit on Sending of emails
 #deployment_settings.mail.limit = 1000
 
 # Frontpage settings
 # RSS feeds
-deployment_settings.frontpage.rss = [
-    {"title": "Eden",
-     # Trac timeline
-     "url": "http://eden.sahanafoundation.org/timeline?ticket=on&changeset=on&milestone=on&wiki=on&max=50&daysback=90&format=rss"
-    },
-    {"title": "Twitter",
-     # @SahanaFOSS
-     # Find ID via http://api.twitter.com/users/show/username.json
-     "url": "http://twitter.com/statuses/user_timeline/96591754.rss"
-     # Hashtag
-     #url: "http://search.twitter.com/search.atom?q=%23eqnz"
-    }
-]
+deployment_settings.frontpage.rss = []
+    #{"title": "Eden",
+    # # Trac timeline
+    # "url": "http://eden.sahanafoundation.org/timeline?ticket=on&changeset=on&milestone=on&wiki=on&max=50&daysback=90&format=rss"
+    #},
+    #{"title": "Twitter",
+    # # @SahanaFOSS
+    # # Find ID via http://api.twitter.com/users/show/username.json
+    # "url": "http://twitter.com/statuses/user_timeline/96591754.rss"
+    # # Hashtag
+    # #url: "http://search.twitter.com/search.atom?q=%23eqnz"
+    #}
+#]
 
 # L10n settings
 #deployment_settings.L10n.default_country_code = 1
@@ -204,11 +206,14 @@ deployment_settings.L10n.decimal_separator = "."
 #deployment_settings.L10n.thousands_separator = ","
 
 # Finance settings
-#deployment_settings.fin.currencies = {
-#    "USD" :T("United States Dollars"),
-#    "EUR" :T("Euros"),
-#    "GBP" :T("Great British Pounds")
-#}
+deployment_settings.fin.currencies = {
+    "USD" :T("United States Dollars"),
+    "CHF" :T("Swiss Francs"),
+    "EUR" :T("Euros"),
+    "GBP" :T("Great British Pounds"),
+    "CAD" :T("Canadian Dollars"),
+    "AUD" :T("Australian Dollars")
+}
 #deployment_settings.fin.currency_default = "USD" # Dollars
 #deployment_settings.fin.currency_writable = False # False currently breaks things
 
@@ -257,7 +262,7 @@ deployment_settings.gis.display_L0 = False
 # Print Service URL: http://eden.sahanafoundation.org/wiki/BluePrintGISPrinting
 #deployment_settings.gis.print_service = "/geoserver/pdf/"
 # Do we have a spatial DB available? (currently supports PostGIS. Spatialite to come.)
-#deployment_settings.gis.spatialdb = True
+deployment_settings.gis.spatialdb = True
 # Bing API Key (for Map layers)
 #deployment_settings.gis.api_bing = ""
 # Google API Key (for Earth & MapMaker Layers)
@@ -292,7 +297,7 @@ deployment_settings.gis.display_L0 = False
 # 5: Apply Controller, Function & Table ACLs
 # 6: Apply Controller, Function, Table & Organisation ACLs
 #
-#deployment_settings.security.policy = 6 # Organisation-ACLs
+deployment_settings.security.policy = 6 # Organisation-ACLs
 #acl = deployment_settings.aaa.acl
 #deployment_settings.aaa.default_uacl =  acl.READ   # User ACL
 #deployment_settings.aaa.default_oacl =  acl.CREATE | acl.READ | acl.UPDATE # Owner ACL
@@ -624,39 +629,39 @@ deployment_settings.modules = OrderedDict([
     #    restricted = True,
     #    module_type = 10,
     #)),
-    #("delphi", Storage(
-    #        name_nice = T("Delphi Decision Maker"),
-    #        description = T("Supports the decision making of large groups of Crisis Management Experts by helping the groups create ranked list."),
-    #        restricted = False,
-    #        module_type = 10,
-    #    )),
-    ("dvi", Storage(
-           name_nice = T("Disaster Victim Identification"),
-           description = T("Disaster Victim Identification"),
-           restricted = True,
-           module_type = 10,
-           #access = "|DVI|",      # Only users with the DVI role can see this module in the default menu & access the controller
-           #audit_read = True,     # Can enable Audit for just an individual module here
-           #audit_write = True
-       )),
-    ("mpr", Storage(
-           name_nice = T("Missing Person Registry"),
-           description = T("Helps to report and search for missing persons"),
-           restricted = False,
-           module_type = 10,
-       )),
+    ("delphi", Storage(
+            name_nice = T("Delphi Decision Maker"),
+            description = T("Supports the decision making of large groups of Crisis Management Experts by helping the groups create ranked list."),
+            restricted = False,
+            module_type = 10,
+        )),
+    #("dvi", Storage(
+    #       name_nice = T("Disaster Victim Identification"),
+    #       description = T("Disaster Victim Identification"),
+    #       restricted = True,
+    #       module_type = 10,
+    #       #access = "|DVI|",      # Only users with the DVI role can see this module in the default menu & access the controller
+    #       #audit_read = True,     # Can enable Audit for just an individual module here
+    #       #audit_write = True
+    #   )),
+    #("mpr", Storage(
+    #       name_nice = T("Missing Person Registry"),
+    #       description = T("Helps to report and search for missing persons"),
+    #       restricted = False,
+    #       module_type = 10,
+    #   )),
     ("cms", Storage(
           name_nice = T("Content Management"),
           description = T("Content Management System"),
           restricted = True,
           module_type = 10,
       )),
-    ("member", Storage(
-           name_nice = T("Members"),
-           description = T("Membership Management System"),
-           restricted = True,
-           module_type = 10,
-       )),
+    #("member", Storage(
+    #       name_nice = T("Members"),
+    #       description = T("Membership Management System"),
+    #       restricted = True,
+    #       module_type = 10,
+    #   )),
     #("fire", Storage(
     #       name_nice = T("Fire Stations"),
     #       description = T("Fire Station Management"),
