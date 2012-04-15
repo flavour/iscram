@@ -624,6 +624,9 @@ table {
     text-align: justify;
     line-height: 1.25;
 }
+#home li {
+    margin-left: 12px;
+}
 #footer {
     background: #fff;
     margin: 0 auto;

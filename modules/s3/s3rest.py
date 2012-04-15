@@ -426,7 +426,10 @@ class S3RequestManager(object):
                                  lambda: field.represent(val),
                                  time_expire=60)
                 if not isinstance(text, basestring):
-                    text = unicode(text)
+                    try:
+                        text = unicode(text)
+                    except (UnicodeEncodeError, UnicodeDecodeError):
+                        text = str(text)
         else:
             if val is None:
                 text = NONE
