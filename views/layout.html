@@ -102,7 +102,7 @@
         <div {{if current.menu.options is None:}}>
             <div class='col1left'>
 <div id='gcalendar-box'>
-<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=readyiscram%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FChicago" style=" border-width:0 " width="240" height="300" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;mode=AGENDA&amp;height=350&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=readyiscram%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FChicago" style=" border-width:0 " width="240" height="350" frameborder="0" scrolling="no"></iframe>
 </div>
 <div class='advert' align='center'>
 <a href='http://www.sahanafoundation.org' target='_blank'><img src='/{{=request.application}}/static/img/iscram/SSF.png' height=76 width=231></a>
@@ -125,9 +125,20 @@
             <div class='col3right'>
 <div class='advert' align='center'>
 	<a href='https://www.facebook.com/pages/ReadyISCRAM/255935291168887' target='_blank' title='{{=T("ReadyISCRAM on Facebook")}}'><img src='/{{=request.application}}/static/img/social/facebook.png' width='32' height='32' style='vertical-align: middle;' alt='{{=T("MyCedarBluff AL on Facebook")}}' /></a>
-	<a href='http://www.linkedin.com/pub/mycedarbluff-al/4b/1a9/372' target='_blank' title='{{=T("ReadyISCRAM on LinkedIn")}}'><img src='/{{=request.application}}/static/img/social/LinkedIn.png' width='32' height='32' style='vertical-align: middle;' alt='{{=T("MyCedarBluff AL on LinkedIn")}}' /></a>
+	<a href='http://www.linkedin.com/' target='_blank' title='{{=T("ReadyISCRAM on LinkedIn")}}'><img src='/{{=request.application}}/static/img/social/LinkedIn.png' width='32' height='32' style='vertical-align: middle;' alt='{{=T("MyCedarBluff AL on LinkedIn")}}' /></a>
 	<a href='http://twitter.com/#!/ReadyISCRAM' target='_blank' title='{{=T("@ReadyISCRAM on Twitter")}}'><img src='/{{=request.application}}/static/img/social/twitter.png' width='32' height='32' style='vertical-align: middle;' alt='{{=T("@MyCedarBluffAL on Twitter")}}' /></a>
-	<a href='http://www.youtube.com/channel/UCVRRzBTdrNKztXTqOTOYQFA' target='_blank' title='{{=T("ReadyISCRAM on YouTube")}}'><img src='/{{=request.application}}/static/img/social/YouTube.png' width='32' height='32' style='vertical-align: middle;' alt='{{=T("MyCedarBluff AL on YouTube")}}' /></a>
+	<a href='http://www.youtube.com/user/ReadyISCRAM' target='_blank' title='{{=T("ReadyISCRAM on YouTube")}}'><img src='/{{=request.application}}/static/img/social/YouTube.png' width='32' height='32' style='vertical-align: middle;' alt='{{=T("MyCedarBluff AL on YouTube")}}' /></a>
+</div>
+<div id='weather-box' class='advert' align='center'>
+<div id="wx_module_6195">
+   <a href="http://www.weather.com/weather/local/CAXX0518">Vancouver Weather Forecast, Canada</a>
+</div>
+<script type="text/javascript">
+   var wx_locID = 'CAXX0518';
+   var wx_targetDiv = 'wx_module_6195';
+   var wx_config='SZ=180x150*WX=FHW*LNK=SSNL*UNT=C*BGI=flower*MAP=can|null*DN=readyiscram.org*TIER=0*PID=1309178735*MD5=924df80ff870cee940da5f0d03f03d83';
+   document.write('<scr'+'ipt src="'+document.location.protocol+'//wow.weather.com/weather/wow/module/'+wx_locID+'?config='+wx_config+'&proto='+document.location.protocol+'&target='+wx_targetDiv+'"></scr'+'ipt>');  
+</script>
 </div>
 <div id='twitter-box'>
 <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>

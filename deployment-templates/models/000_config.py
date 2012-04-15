@@ -493,14 +493,14 @@ deployment_settings.modules = OrderedDict([
             name_nice = T("Organizations"),
             description = T('Lists "who is doing what & where". Allows relief agencies to coordinate their activities'),
             restricted = True,
-            module_type = 1
+            module_type = 10
         )),
     # All modules below here should be possible to disable safely
     ("hrm", Storage(
             name_nice = T("Staff & Volunteers"),
             description = T("Human Resource Management"),
             restricted = True,
-            module_type = 2,
+            module_type = 1,
         )),
     ("doc", Storage(
             name_nice = T("Documents"),
@@ -525,7 +525,7 @@ deployment_settings.modules = OrderedDict([
             name_nice = T("Warehouse"),
             description = T("Receiving and Sending Items"),
             restricted = True,
-            module_type = 4
+            module_type = 3
         )),
     #("proc", Storage(
     #        name_nice = T("Procurement"),
@@ -537,7 +537,7 @@ deployment_settings.modules = OrderedDict([
             name_nice = T("Assets"),
             description = T("Recording and Assigning Assets"),
             restricted = True,
-            module_type = 5,
+            module_type = 2,
         )),
     # Vehicle depends on Assets
     ("vehicle", Storage(
@@ -556,11 +556,11 @@ deployment_settings.modules = OrderedDict([
             name_nice = T("Projects"),
             description = T("Tracking of Projects, Activities and Tasks"),
             restricted = True,
-            module_type = 2
+            module_type = 10
         )),
     ("survey", Storage(
-            name_nice = T("Surveys"),
-            description = T("Create, enter, and manage surveys."),
+            name_nice = T("Assessments"),
+            description = T("Create, enter, and manage assessments."),
             restricted = True,
             module_type = 5,
         )),
@@ -580,7 +580,7 @@ deployment_settings.modules = OrderedDict([
             name_nice = T("Incidents"),
             description = T("Incident Reporting System"),
             restricted = False,
-            module_type = 10
+            module_type = 4
         )),
     #("impact", Storage(
     #        name_nice = T("Impacts"),
