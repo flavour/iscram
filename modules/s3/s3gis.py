@@ -1495,50 +1495,46 @@ class GIS(object):
         T = current.T
         db = current.db
         s3db = current.s3db
-        cache = s3db.cache
+        cache = current.cache
         fieldname = field.name
         tablename = field.tablename
-        hrtable = s3db.hrm_human_resource
 
         # Fallback representation is the value itself
         represent = value
 
-        # If the field is a FK, then check for specials
+        # If the field is an integer lookup then returning that isn't much help
         if fieldname == "type":
             if tablename == "hrm_human_resource":
-                represent = s3db.hrm_type_opts.get(value, "")
+                represent = cache.ram("hrm_type_%s" % value,
+                                      lambda: s3db.hrm_type_opts.get(value, ""),
+                                      time_expire=60)
             elif tablename == "org_office":
-                represent = s3db.org_office_type_opts.get(value, "")
-        elif (tablename, fieldname) in s3db.pr_person._referenced_by:
-            represent = s3_fullname(value)
-        elif (tablename, fieldname) in hrtable._referenced_by:
-            # e.g. assess_rat - convert to Organisation
-            query = (hrtable.id == value)
-            _value = db(query).select(hrtable.organisation_id,
-                                      limitby=(0, 1),
-                                      cache=cache).first()
-            if _value:
-                otable = s3db.org_organisation
-                query = (otable.id == _value)
-                _represent = db(query).select(otable.name,
-                                              limitby=(0, 1),
-                                              cache=cache).first()
-                if _represent:
-                    represent = _represent.name
+                represent = cache.ram("office_type_%s" % value,
+                                      lambda: s3db.org_office_type_opts.get(value, ""),
+                                      time_expire=60)
         elif field.type[:9] == "reference":
-            try:
                 tablename = field.type[10:]
-                table = s3db[tablename]
-                # Try the name
-                represent = db(table.id == value).select(table.name,
-                                                         cache=cache,
-                                                         limitby=(0, 1)).first().name
-            except: # @ToDo: provide specific exception
-                # Keep the default from earlier
-                pass
+                if tablename == "pr_person":
+                    # Unlikely to be the same person in multiple popups so no value to caching
+                    represent = s3_fullname(value)
+                else:
+                    table = s3db[tablename]
+                    if "name" in table.fields:
+                        # Simple Name lookup faster than full represent
+                        represent = cache.ram("%s_%s_%s" % (tablename, fieldname, value),
+                                              lambda: db(table.id == value).select(table.name,
+                                                                                   limitby=(0, 1)).first().name,
+                                              time_expire=60)
+                    else:
+                        # Do the normal represent
+                        represent = cache.ram("%s_%s_%s" % (tablename, fieldname, value),
+                                              lambda: field.represent(value),
+                                              time_expire=60)
         elif field.type.startswith("list"):
-            # Value isn't going to be useful here - do the normal represent
-            represent = field.represent(value)
+            # Do the normal represent
+            represent = cache.ram("%s_%s_%s" % (tablename, fieldname, value),
+                                  lambda: field.represent(value),
+                                  time_expire=60)
 
         return represent
 
@@ -1986,26 +1982,31 @@ class GIS(object):
 
         elif tablename:
             # Search results called by S3Search: search_interactive()
-            (module, resourcename) = tablename.split("_", 1)
-            query = (table.module == module) & \
-                    (table.resource == resourcename) & \
-                    (table.layer_id == ltable.layer_id)
+            def get_layers(tablename):
+                (module, resourcename) = tablename.split("_", 1)
+                query = (table.module == module) & \
+                        (table.resource == resourcename) & \
+                        (table.layer_id == ltable.layer_id)
 
-            left = [
-                    mtable.on((ltable.marker_id == mtable.id) & \
-                              (ltable.symbology_id == symbology_id))
-                    ]
+                left = [
+                        mtable.on((ltable.marker_id == mtable.id) & \
+                                  (ltable.symbology_id == symbology_id))
+                        ]
 
-            layers = db(query).select(mtable.image,
-                                      mtable.height,
-                                      mtable.width,
-                                      #ltable.gps_marker,
-                                      table.filter_field,
-                                      table.filter_value,
-                                      table.popup_label,
-                                      table.popup_fields,
-                                      left=left,
-                                      cache=s3db.cache)
+                layers = db(query).select(mtable.image,
+                                          mtable.height,
+                                          mtable.width,
+                                          #ltable.gps_marker,
+                                          table.filter_field,
+                                          table.filter_value,
+                                          table.popup_label,
+                                          table.popup_fields,
+                                          left=left)
+                return layers
+
+            layers = current.cache.ram("%s_marker" % tablename,
+                                       lambda: get_layers(tablename),
+                                       time_expire=60)
             if not record and len(layers) > 1:
                 # We can't provide details for the whole table, but need to do a per-record check
                 return None
@@ -2073,10 +2074,7 @@ class GIS(object):
                 value = record[fieldname]
                 if value:
                     field = table[fieldname]
-                    # @ToDo: Slow query which would be good to optimise
                     represent = self.get_representation(field, value)
-                    # Is this faster than the simpler alternative?
-                    #represent = resource.table[fieldname].represent(value)
                     tooltip = "%s %s" % (represent, tooltip)
             except:
                 # This field isn't in the table
@@ -2090,11 +2088,8 @@ class GIS(object):
                     value = record[fieldname]
                     if value:
                         field = table[fieldname]
-                        # @ToDo: Slow query which would be
-                        # good to optimise
                         represent = self.get_representation(field, value)
-                        tooltip = "%s<br />%s" % (tooltip,
-                                                  represent)
+                        tooltip = "%s<br />%s" % (tooltip, represent)
             except:
                 # This field isn't in the table
                 pass
@@ -4061,6 +4056,7 @@ S3.gis.layers_feature_queries[%i] = {
                 OSMLayer,
                 TMSLayer,
                 WMSLayer,
+                XYZLayer,
                 JSLayer,
                 ThemeLayer,
                 GeoJSONLayer,
@@ -4094,6 +4090,8 @@ S3.gis.layers_feature_queries[%i] = {
                         layer_types = [TMSLayer]
                     elif layer_type == "gis_layer_wms":
                         layer_types = [WMSLayer]
+                    elif layer_type == "gis_layer_xyz":
+                        layer_types = [XYZLayer]
                     elif layer_type == "gis_layer_empty":
                         layer_types = [EmptyLayer]
             if not layer_types:
@@ -5124,7 +5122,7 @@ class TMSLayer(Layer):
                 url2 = (self.url2, (None,)),
                 url3 = (self.url3, (None,)),
                 format = (self.img_format, ("png", None)),
-                zoomLevels = (self.zoom_levels, (9,)),
+                zoomLevels = (self.zoom_levels, (19,)),
                 attribution = (self.attribution, (None,)),
             )
             self.setup_folder(output)
@@ -5217,6 +5215,35 @@ class WMSLayer(Layer):
                 queryable = (self.queryable, (False, )),
             )
             self.setup_folder_visibility_and_opacity(output)
+            return output
+
+# -----------------------------------------------------------------------------
+class XYZLayer(Layer):
+    """
+        XYZ Layers from Catalogue
+    """
+
+    tablename = "gis_layer_xyz"
+    js_array = "S3.gis.layers_xyz"
+
+    # -------------------------------------------------------------------------
+    class SubLayer(Layer.SubLayer):
+        def as_dict(self):
+            output = {
+                    "id": self.layer_id,
+                    "name": self.safe_name,
+                    "url": self.url
+                }
+            self.add_attributes_if_not_default(
+                output,
+                _base = (self._base, (False,)),
+                url2 = (self.url2, (None,)),
+                url3 = (self.url3, (None,)),
+                format = (self.img_format, ("png", None)),
+                zoomLevels = (self.zoom_levels, (19,)),
+                attribution = (self.attribution, (None,)),
+            )
+            self.setup_folder(output)
             return output
 
 
