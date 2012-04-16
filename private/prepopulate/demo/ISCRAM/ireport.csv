@@ -1,0 +1,104 @@
+"Name","Category","Message","Date","Expiry","Country","State","District","City","Lat","Lon","Image","URL","Affected","Dead","Injured"
+"Tropical Storm Bulegila","meteorological.tropicalStorm","Tropical Storm Bulegila has swept past Timor-Leste from the South East causing widespread flooding and damage to houses, infrastructure and crops","16/04/12","01/05/12","Timor-Leste",,,,,,,,,,
+"Vessoro - Flood","flood",,"17/04/12",,"Timor-Leste","Viqueque","Watulari","Babulo",-8.80058,126.57981,,,,0,0
+"Samalogo - Flood","flood.flashFlood",,"17/04/12",,"Timor-Leste","Viqueque","Ossu","Uabubo",-8.72887,126.43626,,,20,0,0
+"Cailetiana – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Viqueque","Ossu","Builale",-8.68283,126.37154,,,,0,1
+"Naibaroc – Strong Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Viqueque","Viqueque","Uma Uain Craic",-8.88336,126.37619,,,,0,0
+"Ilalein – Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Viqueque","Watulari","Afaloicai",-8.70007,126.56998,,,,0,0
+"Uatodere – Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Viqueque","Uatucarbau","Irabin de Baixo",-8.74861,126.70556,,,,0,0
+"Caidabu – Flood","flood",,"17/04/12",,"Timor-Leste","Lautem","Iliomar","Fuat",-8.63494,126.84219,,,,0,0
+"Batamac - Trapped","other.peopleTrapped",,"17/04/12",,"Timor-Leste","Manatuto","Laclubar","Funar",-8.75332,125.9,,,5,0,0
+"Etipiti - Trapped","other.peopleTrapped",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Com",-8.34144,127.02377,,,1,0,0
+"Condar – Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Manatuto","Laclo","Umacaduac",-8.53194,125.96111,,,40,0,0
+"Hatomera – Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Manatuto","Laclo","Hohorai",-8.60739,125.76415,,,10,0,0
+"Barikafa – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Lautem","Luro","Cotamutu",-8.54583,126.83087,,,,0,2
+"Afaia – Road Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Lautem","Luro","Luro",-8.54614,126.8342,,,,0,0
+"Hamahun - Water","flood.highWater",,"17/04/12",,"Timor-Leste","Lautem","Iliomar","Cainliu",-8.64367,126.82452,,,50,0,0
+"Caintau – Strong Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Lautem","Iliomar","Iliomar I",-8.713,126.83646,,,,0,0
+"Hamahun -  Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Lautem","Iliomar","Cainliu",-8.64367,126.82452,,,,0,0
+"Nualata -  Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Lautem","Lospalos","Lore I",-8.63143,126.98641,,,50,0,0
+"Puileti -  Water","flood.highWater",,"17/04/12",,"Timor-Leste","Lautem","Lospalos","Raca",-8.4375,126.94583,,,100,0,0
+"Akadiruhun – Trapped","other.peopleTrapped",,"17/04/12",,"Timor-Leste","Manufahi","Same","Letefoho",-9.0125,125.65417,,,10,0,0
+"Orlora – Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Manufahi","Fatuberliu","Bubususo",-8.90505,125.76937,,,,0,0
+"Clacuc – Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Manufahi","Fatuberliu","Clacuc",-9.00858,126.01099,,,,0,0
+"Caicasa -  Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Manufahi","Fatuberliu","Caicasa",-9.04265,125.95873,,,,0,0
+"Socemera -  Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Manufahi","Same","Tutuluro",-8.9824,125.69278,,,,0,0
+"Nobularan – Strong Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Manufahi","Alas","Dotic",-9.05559,125.87713,,,,0,0
+"Kertapati – Strong Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Ainaro","Ainaro","Ainaro",-8.98464,125.50353,,,,0,0
+"Bemoris – Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Ainaro","Ainaro","Cassa",-9.13367,125.54511,,,15,0,0
+"Qeorema -  Flood","flood",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Builico","Mulo",-8.88218,125.53573,,,,0,0
+"Sabagulau – High Water","flood.highWater",,"17/04/12",,"Timor-Leste","Ainaro","Ainaro","Ainaro",-8.97558,125.50048,,,30,0,0
+"Bonuk -  Trapped","other.peopleTrapped",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.21533,125.53972,,,20,0,0
+"Hatokade – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Ainaro","Maubisse","Maulau",-8.78311,125.68618,,,,1,2
+"Sogau - Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Viqueque","Ossu","Uaibobo",-8.64489,126.48419,,,,0,3
+"Sentral - andslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Lautem","Lospalos","Fuiloro",-8.52188,126.99469,,,,0,0
+"Orlalan -  Water","flood.highWater",,"17/04/12",,"Timor-Leste","Manatuto","Laclubar","Orlalan",-8.75095,125.91619,,,25,0,0
+"Moassoe – Strong Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Viqueque","Uatucarbau","Irabin de Baixo",-8.71032,126.67143,,,,0,0
+"Gaulala – Strong Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Ermera","Letefoho","Eraulo",-8.80887,125.45694,,,,0,0
+"Tititir – High Water","flood.highWater",,"17/04/12",,"Timor-Leste","Ermera","Ermera","Estado",-8.78968,125.38994,,,70,0,0
+"Locoliu – Strong Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Baucau","Quelicai","Locoliu",-8.61147,126.57092,,,,0,0
+"Lotan -  Flood","flood",,"17/04/12",,"Timor-Leste","Bobonaro","Balibo","Batugade",-8.98042,125.00335,,,,0,0
+"Mangero - Strong Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Ermera","Ermera","Riheu",-8.73912,125.4359,,,,0,0
+"Iraluruto - Strong Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Lautem","Iliomar","Iliomar II",-8.74461,126.84537,,,,0,0
+"Raibere – Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.06699,125.56467,,,,0,0
+"Bonuk – Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.21533,125.53972,,,30,0,0
+"Hutseo 2 – Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.15373,125.57941,,,20,0,0
+"Hutseo 1 – Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.13691,125.58631,,,10,0,0
+"Lese – Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.13435,125.57018,,,20,0,0
+"Aimerliu – Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.1349,125.57328,,,10,0,0
+"Nonuboka – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.13307,125.59534,,,,0,1
+"Bismata -  Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.13203,125.60486,,,60,0,0
+"Raisoro – High Water","flood.highWater",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.13087,125.59697,,,50,0,0
+"Luru – Flash Flood","flood.flashFlood",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.12667,125.58523,,,10,0,0
+"Ausur – Flood","flood",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.12902,125.57946,,,,0,0
+"Groto – Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.11987,125.58872,,,,0,0
+"Hatu-Udo – Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.11958,125.5914,,,,0,0
+"Goulau -  Flood","flood",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.11476,125.58599,,,,0,0
+"Surukraik – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.11004,125.58253,,,,0,2
+"Leolima – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.11082,125.58594,,,,0,3
+"Raesoro – High Water","flood.highWater",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.10784,125.58114,,,60,0,0
+"Raibere – High Water","flood.highWater",,"17/04/12",,"Timor-Leste","Ainaro","Hatu-Udo","Leolima",-9.06699,125.56467,,,50,0,0
+"Alas - Water","flood.highWater",,"17/04/12",,"Timor-Leste","Manufahi","Alas","Mahaquidan",-9.02025,125.78933,,,100,0,0
+"Wedauberek – Flash Flood","flood.flashFlood",,"17/04/12",,"Timor-Leste","Manufahi","Alas","Mahaquidan",-9.12083,125.85278,,,50,0,0
+"Beremanek – Strong Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Manufahi","Alas","Mahaquidan",-9.02565,125.79127,,,,0,0
+"Umamean – Collapsed","roadway.bridgeClosure",,"17/04/12",,"Timor-Leste","Manufahi","Alas","Mahaquidan",-9.02327,125.78904,,,,0,0
+"Cnuaalas – Trapped","other.peopleTrapped",,"17/04/12",,"Timor-Leste","Manufahi","Alas","Mahaquidan",-9.02114,125.79641,,,5,0,0
+"Alas – Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Manufahi","Alas","Mahaquidan",-9.02025,125.78933,,,10,0,0
+"Buihomau - Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Serelau",-8.39758,126.83141,,,,0,0
+"Irafala – Collapsed","roadway.bridgeClosure",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Baduro",-8.45491,126.88918,,,,0,0
+"Luandau – Collapsed","roadway.bridgeClosure",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Baduro",-8.45368,126.88738,,,,0,0
+"Laculomano – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Baduro",-8.45596,126.89569,,,,0,0
+"Baduro – Collapsed","roadway.bridgeClosure",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Baduro",-8.45349,126.89121,,,,0,0
+"Lakulomano – Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Baduro",-8.44469,126.8782,,,,0,0
+"Malailada – Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Baduro",-8.4448,126.89583,,,,0,0
+"Hataman – Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Baduro",-8.38746,126.85162,,,,0,0
+"Tamaro – High Water","flood.highWater",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Baduro",-8.37394,126.88677,,,40,0,0
+"Tamitaru – High Water","flood.highWater",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Baduro",-8.36873,126.89146,,,30,0,0
+"Liarafa – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Baduro",-8.35379,126.91561,,,,0,1
+"Petileti -  Flood","flood",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Com",-8.36667,127.03889,,,,0,0
+"Iraono -  Flood","flood.flashFlood",,"17/04/12",,"Timor-Leste","Lautem","Lautem","Com",-8.3654,127.03585,,,40,0,0
+"Umaboco – High Water","flood.highWater",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Uma Boco",-8.97564,126.04685,,,20,0,0
+"Ranac – High Water","flood.highWater",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Abat Oan",-8.97295,126.06049,,,80,0,0
+"Camedar – Flood","flood",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Abat Oan",-8.97185,126.05766,,,,0,0
+"Waicadi – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Aubeon",-8.99122,126.06047,,,,0,2
+"Buburlolon – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Aubeon",-8.98212,126.06151,,,,0,3
+"Webani – Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Barique",-8.84802,126.06325,,,20,0,0
+"Caunua – Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Barique",-8.84709,126.06484,,,50,0,0
+"Barique – Flood","flood",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Barique",-8.84661,126.06213,,,,0,0
+"Dambohum – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Manehat",-8.91402,125.96817,,,,1,5
+"Nuahuc -  Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Manehat",-8.91471,125.97122,,,100,0,0
+"Manehat -  Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Manehat",-8.91313,125.96735,,,20,0,0
+"Fatobalon -  Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Manehat",-8.91371,125.97151,,,10,0,0
+"Wemaubodak – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Uma Boco",-8.98091,126.05217,,,,0,1
+"Fahikrin - Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Uma Boco",-8.97673,126.0458,,,,0,0
+"Umaboco - Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Manatuto","Barique/Natarbora","Uma Boco",-8.97564,126.04685,,,,0,0
+"Lacoloroho – Flood","flood",,"17/04/12",,"Timor-Leste","Viqueque","Uatucarbau","Uani Uma",-8.72352,126.6784,,,,0,0
+"Kapuas – Flash Flood","flood.flashFlood",,"17/04/12",,"Timor-Leste","Viqueque","Uatucarbau","Uani Uma",-8.75913,126.65734,,,20,0,0
+"Kadilale – Flash Flood","flood.flashFlood",,"17/04/12",,"Timor-Leste","Viqueque","Uatucarbau","Uani Uma",-8.75729,126.65859,,,10,0,0
+"Uatucarbau – Collapsed","roadway.bridgeClosure",,"17/04/12",,"Timor-Leste","Viqueque","Uatucarbau","Uani Uma",-8.75708,126.6848,,,,0,0
+"Comaoli – Trapped","other.peopleTrapped",,"17/04/12",,"Timor-Leste","Viqueque","Uatucarbau","Uani Uma",-8.75537,126.67828,,,2,0,0
+"Uaniuma – Road Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Viqueque","Uatucarbau","Uani Uma",-8.75577,126.68472,,,,0,0
+"Tanalale – Road Blocked","roadway.roadwayClosure",,"17/04/12",,"Timor-Leste","Viqueque","Uatucarbau","Uani Uma",-8.75462,126.68839,,,,0,0
+"Lacoloroho – Strong Wind","wind.strongWind",,"17/04/12",,"Timor-Leste","Viqueque","Uatucarbau","Uani Uma",-8.72352,126.6784,,,,0,0
+"Lebulema -  Power Cut","other.powerFailure",,"17/04/12",,"Timor-Leste","Liquiçá","Maubara","Vatuvou",-8.63606,125.22741,,,50,0,0
+"Tuhilu Craic – Landslide","geophysical.landslide",,"17/04/12",,"Timor-Leste","Liquiçá","Bazartete","Fahilebo",-8.63601,125.39497,,,,3,6
